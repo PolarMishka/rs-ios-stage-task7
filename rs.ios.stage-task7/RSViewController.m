@@ -11,6 +11,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *loginField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *authorizeButton;
+@property (weak, nonatomic) IBOutlet UIView *secureView;
+@property (weak, nonatomic) IBOutlet UIButton *secureButton1;
+@property (weak, nonatomic) IBOutlet UIButton *secureButton2;
+@property (weak, nonatomic) IBOutlet UIButton *secureButton3;
+@property (weak, nonatomic) IBOutlet UILabel *secureLable;
 
 @end
 
@@ -18,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     // setup loginField
     self.loginField.layer.borderColor = [[UIColor colorNamed:@"Black Coral"] CGColor];;
@@ -44,6 +50,17 @@
                             action:@selector(changeColor:)
                   forControlEvents:UIControlEventTouchDown];
     
+    // secureButton taped
+    [self.secureButton1 addTarget:self
+                           action:@selector(saveSecureButtonTapped:)
+              forControlEvents:UIControlEventTouchDown];
+    [self.secureButton2 addTarget:self
+                           action:@selector(saveSecureButtonTapped:)
+              forControlEvents:UIControlEventTouchDown];
+    [self.secureButton3 addTarget:self
+                           action:@selector(saveSecureButtonTapped:)
+              forControlEvents:UIControlEventTouchDown];
+    
     // Add tarrget and selection for return fields border color
     [self.loginField addTarget:self action:@selector(returnFieldstBorderColor:) forControlEvents:UIControlEventEditingChanged];
     [self.passwordField addTarget:self action:@selector(returnFieldstBorderColor:) forControlEvents:UIControlEventEditingChanged];
@@ -60,6 +77,7 @@
 
 // ==========================================================
 
+
 - (void)saveButtonTapped:(UIButton *)sender {
     self.authorizeButton.layer.backgroundColor = [[UIColor colorNamed:@"White"] CGColor];
         if ([self.loginField.text isEqual: @"login"] && [self.passwordField.text isEqual: @"password"]) {
@@ -67,8 +85,6 @@
             [self hideFieldsAndButton];
             [self enableSecureButton];
         }
-    
-    NSLog(@"LOG SAY: button tapped");
 }
   
 // method for change background collor of button and border color of fields
@@ -110,18 +126,38 @@
 // disable loginField passwordField fields and authorizeButton
 - (void)hideFieldsAndButton {
     
-    [self.loginField setEnabled:NO];
-    [self.passwordField setEnabled:NO];
-    [self.authorizeButton setEnabled:NO];
-    [self.authorizeButton setAlpha:0.5];
-    [self.loginField setAlpha:0.5];
-    [self.passwordField setAlpha:0.5];
+    self.loginField.enabled = false;
+    self.passwordField.enabled = false;
+    self.authorizeButton.enabled = false;
+    self.loginField.alpha = 0.5;
+    self.passwordField.alpha = 0.5;
+    self.authorizeButton.alpha = 0.5;
+    
     
 }
 
-// secure button
+// secure button setup
 - (void)enableSecureButton {
-    
+//    self.secureButton1.layer.backgroundColor = [[[UIColor colorNamed:@"Little Boy Blue"] colorWithAlphaComponent:0.2] CGColor];
+    self.secureView.layer.backgroundColor = [[UIColor colorNamed:@"White"] CGColor];
+    self.secureButton1.layer.borderColor = [[UIColor colorNamed:@"Little Boy Blue"] CGColor];
+    self.secureButton1.layer.borderWidth = 1.5;
+    self.secureButton1.layer.cornerRadius = 25.0;
+    self.secureButton2.layer.borderColor = [[UIColor colorNamed:@"Little Boy Blue"] CGColor];
+    self.secureButton2.layer.borderWidth = 1.5;
+    self.secureButton2.layer.cornerRadius = 25.0;
+    self.secureButton3.layer.borderColor = [[UIColor colorNamed:@"Little Boy Blue"] CGColor];
+    self.secureButton3.layer.borderWidth = 1.5;
+    self.secureButton3.layer.cornerRadius = 25.0;
+    self.secureView.hidden = false;
+}
+
+ - (void)saveSecureButtonTapped:(UIButton *)sender {
+//     NSMutableString *secureText = [[NSMutableString alloc] init];
+//     [secureText stringByAppendingString:sender.currentTitle];
+//     //[secureText stringByAppendingString:sender.currentTitle];
+     self.secureLable.text = sender.currentTitle;
+     
 }
 
 @end

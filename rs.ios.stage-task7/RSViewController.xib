@@ -2,17 +2,29 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RSViewController">
             <connections>
                 <outlet property="authorizeButton" destination="EIw-aa-JSn" id="QxK-NT-5AL"/>
                 <outlet property="loginField" destination="sLT-Yz-fQY" id="UKp-oN-2jT"/>
                 <outlet property="passwordField" destination="gXz-iM-kMg" id="lsn-AN-BdD"/>
+                <outlet property="secureButton1" destination="1q8-51-bb0" id="PhV-CB-5eY"/>
+                <outlet property="secureButton2" destination="m5L-an-Svi" id="Vd5-Ee-FoB"/>
+                <outlet property="secureButton3" destination="oUn-62-1s4" id="JZL-kV-q9Q"/>
+                <outlet property="secureLable" destination="VbL-9v-oDn" id="zdH-ji-acu"/>
+                <outlet property="secureView" destination="9Qi-6n-Rq4" id="xIk-zi-Wyi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSchool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTS-Df-4Xv">
-                    <rect key="frame" x="106" y="80" width="163" height="43"/>
+                    <rect key="frame" x="106.5" y="80" width="162.5" height="43"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -59,6 +71,69 @@
                         <color key="titleColor" red="0.50196078431372548" green="0.64313725490196072" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qi-6n-Rq4">
+                    <rect key="frame" x="70" y="480" width="236" height="110"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbL-9v-oDn" userLabel="Lable">
+                            <rect key="frame" x="80.5" y="15" width="75" height="21.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="h7D-2t-gnt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <color key="textColor" name="Black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hgm-02-gBs">
+                            <rect key="frame" x="23" y="45" width="190" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1q8-51-bb0">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="LQ4-wI-Z51"/>
+                                        <constraint firstAttribute="height" constant="50" id="awB-U0-rjA"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                    <state key="normal" title="1">
+                                        <color key="titleColor" name="Little Boy Blue"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-an-Svi">
+                                    <rect key="frame" x="70" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="0Up-CU-oqu"/>
+                                        <constraint firstAttribute="height" constant="50" id="MUv-zS-GYu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                    <state key="normal" title="2">
+                                        <color key="titleColor" name="Little Boy Blue"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUn-62-1s4">
+                                    <rect key="frame" x="140" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="a8M-9z-vef"/>
+                                        <constraint firstAttribute="width" constant="50" id="l9V-XJ-igV"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                    <state key="normal" title="3">
+                                        <color key="titleColor" name="Little Boy Blue"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="Turquoise Green"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="236" id="0nf-mr-Cwp"/>
+                        <constraint firstItem="Hgm-02-gBs" firstAttribute="leading" secondItem="9Qi-6n-Rq4" secondAttribute="leading" constant="23" id="2NY-Uc-Gug"/>
+                        <constraint firstAttribute="bottom" secondItem="Hgm-02-gBs" secondAttribute="bottom" constant="15" id="SnR-YU-o6a"/>
+                        <constraint firstItem="VbL-9v-oDn" firstAttribute="centerX" secondItem="9Qi-6n-Rq4" secondAttribute="centerX" id="Yc8-Nw-4mJ"/>
+                        <constraint firstAttribute="trailing" secondItem="Hgm-02-gBs" secondAttribute="trailing" constant="23" id="jLI-rV-PtU"/>
+                        <constraint firstItem="Hgm-02-gBs" firstAttribute="top" secondItem="9Qi-6n-Rq4" secondAttribute="top" constant="45" id="n57-lk-Hkz"/>
+                        <constraint firstItem="VbL-9v-oDn" firstAttribute="top" secondItem="9Qi-6n-Rq4" secondAttribute="top" constant="15" id="o19-GH-yeq"/>
+                        <constraint firstAttribute="height" constant="110" id="qcg-9J-Diy"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -70,7 +145,9 @@
                 <constraint firstItem="FTS-Df-4Xv" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="80" id="AdM-iy-ful"/>
                 <constraint firstItem="sLT-Yz-fQY" firstAttribute="top" secondItem="FTS-Df-4Xv" secondAttribute="bottom" constant="80" id="NgT-0U-8gD"/>
                 <constraint firstItem="gXz-iM-kMg" firstAttribute="leading" secondItem="sLT-Yz-fQY" secondAttribute="leading" id="SP0-uE-17H"/>
+                <constraint firstItem="9Qi-6n-Rq4" firstAttribute="centerX" secondItem="EIw-aa-JSn" secondAttribute="centerX" id="cnF-Dm-ZAa"/>
                 <constraint firstItem="FTS-Df-4Xv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="u6k-rO-Pvl"/>
+                <constraint firstItem="9Qi-6n-Rq4" firstAttribute="top" secondItem="EIw-aa-JSn" secondAttribute="bottom" constant="67" id="yGr-MA-soY"/>
                 <constraint firstItem="gXz-iM-kMg" firstAttribute="trailing" secondItem="sLT-Yz-fQY" secondAttribute="trailing" id="z4M-ro-Xwu"/>
                 <constraint firstItem="gXz-iM-kMg" firstAttribute="top" secondItem="sLT-Yz-fQY" secondAttribute="bottom" constant="36" id="za6-r7-lfS"/>
             </constraints>
@@ -80,6 +157,15 @@
     <resources>
         <image name="user-fill2x" width="15" height="17"/>
         <image name="user2x" width="14" height="15"/>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Little Boy Blue">
+            <color red="0.50196078431372548" green="0.64313725490196083" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Turquoise Green">
+            <color red="0.56862745098039214" green="0.7803921568627451" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
